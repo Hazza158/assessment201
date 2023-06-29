@@ -38,16 +38,26 @@ def instructions():
     print()
     print("Instructions go here")
     print()
-
     return ""
 
+# main routine goes here
+want_instructions = yes_no("Do you want to see the instructions? ")
 
-used_before = yes_no("have you used the calculator before?")
+if want_instructions == "yes":
+    print('''\n
+    instructions go here
+    ''')
 
-if used_before == "no":
-    instructions()
+item_list = []
+amount_list = []
+price_list = []
 
-print()
+
+variable_dictionary = {
+    "Item": item_list,
+    "Amount": amount_list,
+    "Price": price_list,
+}
 
 
 
