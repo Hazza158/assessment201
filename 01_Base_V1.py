@@ -48,16 +48,7 @@ if want_instructions == "yes":
     instructions go here
     ''')
 
-item_list = []
-amount_list = []
-price_list = []
 
-
-variable_dictionary = {
-    "Item": item_list,
-    "Amount": amount_list,
-    "Price": price_list,
-}
 
 
 
