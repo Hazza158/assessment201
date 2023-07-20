@@ -54,13 +54,13 @@ def get_ingredients(var_fixed):
     # Set up dictionaries and lists
 
     item_list = []
-    amount_list = []
+    quantity_list = []
     price_list = []
     unit_list = []
 
     variable_dict = {
         "Item": item_list,
-        "Amount": amount_list,
+        "Quantity": quantity_list,
         "Price": price_list,
         "Unit": unit_list
 
@@ -91,18 +91,16 @@ def get_ingredients(var_fixed):
 
         print()
         # get name, amount and item
-        item_name = not_blank("Ingredient name: ",
-                              "The ingredient name can't be blank.")
 
         if item_name.lower() == "xxx":
             break
 
-        amount = num_check("Amount:", "The amount must be a whole number which is more than zero", int)
+        quantity = num_check("Quantity:", "The quantity must be a whole number which is more than zero", int)
         price = num_check("How much for a single item? $", "The price must be a number <more than 0>", float)
-        unit = unit_checker("Please enter the measurement unit (g, kg, mL, L):", "Incorrect response", unit_list)
+        unit = string_checker("Please enter the measurement unit (g, kg, mL, L):", "Incorrect response", unit_list)
         # add item, quantity, price, and unit to lists
         item_list.append(item_name)
-        amount_list.append(amount)
+        quantity_list.append(quantity)
         price_list.append(price)
         unit_list.append(unit)
 
@@ -124,7 +122,7 @@ def get_ingredients(var_fixed):
 
 # Get Recipe name
 recipe_name = not_blank("Recipe name: ", "The recipe name can't be blank.")
-ingredient_name = not_blank("Enter Ingredient:", "Please choose an ingredient or type <xxx>.")
+ingredient_name = not_blank("Ingredient name: ", "Please choose an ingredient or type <xxx>.")
 
 variable_ingredients = get_ingredients("variable")
 variable_frame = variable_ingredients[0]

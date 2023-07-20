@@ -1,5 +1,6 @@
 import pandas
 
+
 #functions go here
 
 
@@ -53,14 +54,6 @@ def currency(x):
     return f"${x:.2f}"
 
 
-def instructions():
-    print("**** How to Use the Recipe Cost Calculator ****")
-    print()
-    print("Instructions go here")
-    print()
-    return ""
-
-
 # Gets expenses, returns list wish has the data frame and sub-total
 def get_ingredients(var_fixed):
     # Set up dictionaries and lists
@@ -103,15 +96,13 @@ def get_ingredients(var_fixed):
 
         print()
         # get name, amount and item
-        item_name = not_blank("Ingredient name: ",
-                              "The ingredient name can't be blank.")
 
         if item_name.lower() == "xxx":
             break
 
         amount = num_check("Amount:", "The amount must be a whole number which is more than zero", int)
         price = num_check("How much for a single item? $", "The price must be a number <more than 0>", float)
-        unit = unit_checker("Please enter the measurement unit (g, kg, mL, L):", "Incorrect response", unit_list)
+        unit = unit_checker("Please enter the measurement unit (g, kg, mL, L):", "Incorrect response", float)
         # add item, quantity, price, and unit to lists
         item_list.append(item_name)
         amount_list.append(amount)
@@ -138,13 +129,14 @@ want_instructions = yes_no("Do you want to see the instructions? ")
 if want_instructions == "yes":
     print('''\n
     instructions go here
+    \n
     ''')
 
 # **** Main routine begins ****
 
 # Get Recipe name
 recipe_name = not_blank("Recipe name: ", "The recipe name can't be blank.")
-ingredient_name = not_blank("Enter Ingredient:", "Please choose an ingredient or type <xxx>.")
+ingredient_name = not_blank("Ingredient name: ", "Please choose an ingredient or type <xxx>.")
 
 variable_ingredients = get_ingredients("variable")
 variable_frame = variable_ingredients[0]
@@ -157,7 +149,7 @@ print()
 print(variable_frame)
 print()
 
-print("Variable Costs: ${:.2f}".format(variable_sub))
+print("Variable Costs: ${:.2f}".format(variable_sub, unit_frame))
 
 
 
