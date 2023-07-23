@@ -1,5 +1,7 @@
 import pandas
 
+#functions go here
+
 
 def num_check(question, error, num_type):
     valid = False
@@ -82,7 +84,7 @@ def get_ingredients(var_fixed):
             elif response == "xxx":
                 return "Next Question"
             else:
-                print("INCORRECT RESPONSE: Please correct your response in order to proceed.")
+                print("INCORRECT RESPONSE: Sorry that is the incorrect response.")
 
     # loop to get component, Amount and price
     item_name = ""
@@ -97,7 +99,7 @@ def get_ingredients(var_fixed):
 
         quantity = num_check("Quantity:", "The quantity must be a whole number which is more than zero", int)
         price = num_check("How much for a single item? $", "The price must be a number <more than 0>", float)
-        unit = string_checker("Please enter the measurement unit (g, kg, mL, L):", "Incorrect response", unit_list)
+        unit = string_checker("what is the the measurement unit that you want to use? (g, kg, mL, L):", unit_list)
         # add item, quantity, price, and unit to lists
         item_list.append(item_name)
         quantity_list.append(quantity)
