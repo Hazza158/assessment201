@@ -27,4 +27,8 @@ def get_ingredients():
         if get_ingredient == "xxx" and len(get_recipe) > 2:
             break
 
-        elif
+        elif get_ingredient == "xxx" and len(get_recipe) <3:
+            print("Sorry you need atleast 3 ingredients to proceed.")
+
+        else:
+            get_recipe.append(get_ingredient)
