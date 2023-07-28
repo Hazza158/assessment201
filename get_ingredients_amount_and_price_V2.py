@@ -46,9 +46,7 @@ def not_blank(question, error):
 
 
 # currency formatting
-def currency(x):
-    return f"${x:.2f}"
-    # return "${:.2f}".format(x)
+
 
 
 # Gets expenses, returns list wish has the data frame and sub-total
