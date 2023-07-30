@@ -93,8 +93,8 @@ while True:
     print("enter ingredients one at a time, enter <xxx> to finish")
 
     # get ingredient
-    get_ingredient = not_blank("what is your ingredient (enter <xxx> to end): ")
-
+    get_ingredient = not_blank("what is your ingredient (enter <xxx> to end): ", "please enter a valid response")
+    print()
     # stop looping if <xxx> is entered and there are 3 or more ingredients entered
     if get_ingredient == "xxx" and len(ingredient_name) > 2:
         break
@@ -107,7 +107,7 @@ while True:
     bought_amount = num_check("How much have you bought?: ", "please enter a number", float)
     print()
     ingredient_price = num_check("How much did you pay for the ingredient?: $", "please enter a number", float)
-
+    print()
     unit_cost = (ingredient_price / bought_amount * needed_amount)
 
     # list list list list
@@ -124,7 +124,8 @@ recipe_panda = pandas.DataFrame(recipe_dict)
 total_cost = recipe_panda["Total Cost"].sum()
 serving_cost = total_cost / needed_size
 print(recipe_panda)
-
+print("Total Cost: ${}:.2f".format(total_cost))
+print("Cost per Serving: ${:.2f}".format(serving_cost))
 
 
 
