@@ -53,7 +53,21 @@ want_instructions = yes_no("Do you want to see the instructions? ")
 
 if want_instructions == "yes":
     print('''\n
-    instructions go here
+    ***** Welcome To The Recipe Cost Calculator *****
+    
+    You will use this calculator by inputting:
+    * The name of the recipe
+    * How many people you are serving
+    * Your ingredients
+    * How much of the ingredient is needed
+    * How much of the ingredient you have already bought
+    * How much you have paid for the ingredients
+    
+    When you have finished inputting your ingredients (minimum of 3),
+    you can then finish the program and it will print your recipe costs
+    in a readable table/format.
+    
+    ***** Have Fun!! ***** 
     \n
     ''')
 
@@ -96,15 +110,15 @@ while True:
     get_ingredient = not_blank("what is your ingredient (enter <xxx> to end): ", "please enter a valid response")
     print()
     # stop looping if <xxx> is entered and there are 3 or more ingredients entered
-    if get_ingredient == "xxx" and len(ingredient_name) > 2:
+    if get_ingredient == "xxx" and len(ingredient_name) > 1:
         break
 
-    elif get_ingredient == "xxx" and len(ingredient_name) < 3:
+    elif get_ingredient == "xxx" and len(ingredient_name) < 1:
         print("Sorry you need at least 3 ingredients to proceed.")
 
-    needed_amount = num_check("How much of the ingredient do you need?: ", "please enter a number", float)
+    needed_amount = num_check("How much of the ingredient do you need? (grams): ", "please enter a number", float)
     print()
-    bought_amount = num_check("How much have you bought?: ", "please enter a number", float)
+    bought_amount = num_check("How much have you bought? (grams): ", "please enter a number", float)
     print()
     ingredient_price = num_check("How much did you pay for the ingredient?: $", "please enter a number", float)
     print()
@@ -120,11 +134,11 @@ while True:
 # panda the goods
 recipe_panda = pandas.DataFrame(recipe_dict)
 
-# cost of each serving and otal cost
+# cost of each serving and total cost
 total_cost = recipe_panda["Total Cost"].sum()
 serving_cost = total_cost / needed_size
 print(recipe_panda)
-print("Total Cost: ${}:.2f".format(total_cost))
+print("Total Cost: ${:.2f}".format(total_cost))
 print("Cost per Serving: ${:.2f}".format(serving_cost))
 
 
