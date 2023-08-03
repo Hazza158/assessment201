@@ -67,7 +67,7 @@ if want_instructions == "yes":
     you can then finish the program and it will print your recipe costs
     in a readable table/format.
     
-    ***** Have Fun!! ***** 
+    ***** Have Fun !! ***** 
     \n
     ''')
 
@@ -135,7 +135,7 @@ while True:
 recipe_panda = pandas.DataFrame(recipe_dict)
 
 # cost of each serving and total cost
-total_cost = recipe_panda["Total Cost"].sum()
+total_cost = recipe_panda["*Production Cost*"].sum()
 serving_cost = total_cost / needed_size
 print(recipe_panda)
 print("Total Cost: ${:.2f}".format(total_cost))
