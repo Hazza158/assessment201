@@ -1,3 +1,5 @@
+
+# functions
 def yes_no(question):
     valid = False
     while not valid:
@@ -15,18 +17,26 @@ def yes_no(question):
             print("please answer yes / no")
 
 
-def instructions():
-    print("**** How to Use the Recipe Cost Calculator ****")
-    print()
-    print("Instructions go here")
-    print()
+want_instructions = yes_no("Do you want to see the instructions? ")
 
-    return ""
+if want_instructions == "yes":
+    print('''\n
+    ***** Welcome To The Recipe Cost Calculator *****
+
+    You will use this calculator by inputting:
+    * The name of the recipe
+    * How many people you are serving
+    * Your ingredients
+    * How much of the ingredient is needed
+    * How much of the ingredient you have already bought
+    * How much you have paid for the ingredients
+
+    When you have finished inputting your ingredients (minimum of 3),
+    you can then finish the program and it will print your recipe costs
+    in a readable table/format.
+
+    ***** Have Fun !! ***** 
+    \n
+    ''')
 
 
-used_before = yes_no("have you used the calculator before?")
-
-if used_before == "no":
-    instructions()
-
-print()

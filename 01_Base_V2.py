@@ -1,7 +1,7 @@
 import pandas
 
 
-#functions go here
+# functions go here
 
 def num_check(question, error, num_type):
     valid = False
@@ -53,7 +53,7 @@ want_instructions = yes_no("Do you want to see the instructions? ")
 
 if want_instructions == "yes":
     print('''\n
-    ***** Welcome To The Recipe Cost Calculator *****
+    ***** com To The Recipe Cost Calculator *****
     
     You will use this calculator by inputting:
     * The name of the recipe
@@ -70,7 +70,6 @@ if want_instructions == "yes":
     ***** Have Fun !! ***** 
     \n
     ''')
-
 
 # main routine
 
@@ -140,18 +139,3 @@ serving_cost = total_cost / needed_size
 print(recipe_panda)
 print("Total Cost: ${:.2f}".format(total_cost))
 print("Cost per Serving: ${:.2f}".format(serving_cost))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
