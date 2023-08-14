@@ -53,18 +53,18 @@ want_instructions = yes_no("Do you want to see the instructions? ")
 
 if want_instructions == "yes":
     print('''\n
-    ***** com To The Recipe Cost Calculator *****
+    ***** Welcome To The Recipe Cost Calculator *****
     
     You will use this calculator by inputting:
     * The name of the recipe
     * How many people you are serving
     * Your ingredients
-    * How much of the ingredient is needed
-    * How much of the ingredient you have already bought
+    * How much of the ingredient is needed (this is in grams)
+    * How much of the ingredient you have already bought (this is in grams)
     * How much you have paid for the ingredients
     
-    When you have finished inputting your ingredients (minimum of 3),
-    you can then finish the program and it will print your recipe costs
+    When you have finished inputting your ingredients (minimum of 3 ingredients),
+    you can then input <xxx> to finish the program and it will print your recipe costs
     in a readable table/format.
     
     ***** Have Fun !! ***** 
@@ -112,12 +112,12 @@ while True:
     if get_ingredient == "xxx" and len(ingredient_name) > 1:
         break
 
-    elif get_ingredient == "xxx" and len(ingredient_name) < 1:
+    elif get_ingredient == "xxx" and len(ingredient_name) < 3:
         print("Sorry you need at least 3 ingredients to proceed.")
 
-    needed_amount = num_check("How much of the ingredient do you need? (grams): ", "please enter a number", float)
+    needed_amount = num_check("How much of the ingredient do you need? (in grams): ", "please enter a number", float)
     print()
-    bought_amount = num_check("How much have you bought? (grams): ", "please enter a number", float)
+    bought_amount = num_check("How much have you bought? (in grams): ", "please enter a number", float)
     print()
     ingredient_price = num_check("How much did you pay for the ingredient?: $", "please enter a number", float)
     print()

@@ -13,3 +13,5 @@ def yes_no(question):
 
         else:
             print("please answer yes / no")
+
+testing = yes_no("do you like pizza?")

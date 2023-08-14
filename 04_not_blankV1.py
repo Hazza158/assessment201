@@ -4,7 +4,9 @@ def not_blank(question, error):
         response = input(question)
 
         if response == "":
-            print("{}. \n Please try again. \n".format(error))
+            print("that is blank, please try again".format(error))
             continue
 
         return response
+
+testing = not_blank("what is your ingredient?", "this is blank, please try again")

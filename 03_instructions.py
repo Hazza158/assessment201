@@ -5,11 +5,11 @@ def yes_no(question):
     while not valid:
         response = input(question).lower()
 
-        if response == "yes" or response == "y":
+        if response == "yes" or response == "Y":
             response = "yes"
             return response
 
-        elif response == "no" or response == "n":
+        elif response == "no" or response == "N":
             response = "no"
             return response
 
