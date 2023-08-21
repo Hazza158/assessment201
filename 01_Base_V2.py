@@ -2,7 +2,7 @@ import pandas
 
 
 # functions go here
-# makes sure that when the user inputs a number it is not less than zero
+# makes sure that when the user inputs a number it is more than zero
 def num_check(question, error, num_type):
     valid = False
     while not valid:
@@ -83,11 +83,11 @@ total_bought_amount = []
 total_production_cost = []
 
 recipe_dict = {
-    "*Ingredients*": ingredient_name,
-    "*Ingredient Price*": total_ingredient_price,
-    "*Needed Amount*": total_needed_amount,
-    "*Bought Amount*": total_bought_amount,
-    "*Production Cost*": total_production_cost
+    "Ingredients": ingredient_name,
+    "Ingred Price": total_ingredient_price,
+    "Needed Amount": total_needed_amount,
+    "Bought Amount": total_bought_amount,
+    "Creation Cost": total_production_cost
 }
 
 # ***** user input goes here *****
@@ -108,7 +108,7 @@ while True:
 
     print("enter ingredients one at a time, enter <xxx> to finish")
 
-    # asks user what their ingredient is
+    # asks user what their ingredient is, makes sure the answer cannot be blank
     get_ingredient = not_blank("what is your ingredient (enter <xxx> to end): ", "sorry this cannot be blank")
     print()
     # stop looping if <xxx> is entered and there are 3 or more ingredients entered
@@ -141,7 +141,7 @@ recipe_panda = pandas.DataFrame(recipe_dict)
 
 # calculate the cost of each serving and total cost
 # and then print the total cost and cost per serving to 2dp
-total_cost = recipe_panda["*Production Cost*"].sum()
+total_cost = recipe_panda["Creation Cost"].sum()
 serving_cost = total_cost / needed_size
 print(recipe_panda)
 print("Total Cost: ${:.2f}".format(total_cost))
